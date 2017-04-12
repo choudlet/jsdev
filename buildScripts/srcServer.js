@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 var express = require('express');
 var path = require('path');
 var open = require('open');
@@ -14,7 +15,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
   publicPath: config.output.publicPath
 }))
 
-app.get('/',(req,res,next)=>{
+app.get('/',(req,res)=>{
 res.sendFile(path.join(__dirname, '../src/index.html'));
 })
 
